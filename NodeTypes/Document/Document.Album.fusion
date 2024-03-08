@@ -1,0 +1,21 @@
+prototype(Soee.Gallery:Document.Album) < prototype(Neos.Neos:Page) {
+  title = ${q(node).property('title')}
+  content {
+    description = Neos.Neos:ContentCollection {
+      nodePath = 'description'
+      @process.convertUris = Neos.Neos:ConvertUris
+    }
+    main = Neos.Neos:ContentCollection {
+      nodePath = 'main'
+      @process.convertUris = Neos.Neos:ConvertUris
+    }
+  }
+  album = Soee.Gallery:Content.Album
+
+  body = afx`
+    {props.title}
+    {props.content.description}
+    {props.album}
+    {props.content.main}
+  `
+}

@@ -1,0 +1,82 @@
+prototype(Soee.Gallery:Presentation.Fragment.GalleryAlbumPreview) < prototype(Neos.Fusion:Component) {
+  album = null
+
+  renderParentGalleryLink = null
+  albumPreviewThumbnailWidth = null
+  albumPreviewThumbnailHeight = null
+  albumPreviewThumbnailCrop = null
+  renderParentGalleryLink = null
+  renderParentGalleryLink = null
+
+  previewImage = ${q(album).property('previewImage')}
+  blockClass = 'gallery'
+
+  @context {
+    blockClass = ${this.blockClass}
+    parentGallery = ${q(album).parents('[instanceof Soee.Gallery:Document.Gallery]').get(0)}
+    renderParentGalleryLink = ${this.renderParentGalleryLink}
+  }
+
+  parentGallery = ${parentGallery}
+  renderGalleryLink = ${renderParentGalleryLink && parentGallery}
+
+  attributes = Neos.Fusion:DataStructure {
+    class {
+      base = ${blockClass + '__album'}
+    }
+  }
+
+  albumLinkAttributes = Neos.Fusion:DataStructure {
+    href = Neos.Neos:NodeUri {
+      node = ${album}
+    }
+    title = ${album.properties.title}
+    class {
+      base = ${blockClass + '__album-link'}
+    }
+  }
+
+  albumTitleAttributes = Neos.Fusion:DataStructure {
+    class {
+      base = ${blockClass + '__album-title'}
+    }
+  }
+
+  albumImageAttributes = Neos.Fusion:DataStructure {
+    class {
+      base = ${blockClass + '__album-image'}
+    }
+  }
+
+  parentGalleryLinkAttributes = Neos.Fusion:DataStructure {
+    href = Neos.Neos:NodeUri {
+      node = ${parentGallery}
+    }
+    title = ${parentGallery.properties.title}
+    class {
+      base = ${Configuration.setting('Soee.Gallery.gallery.css.itemParentGalleryLinkClass')}
+    }
+  }
+
+  renderer = afx`
+    <Neos.Fusion:Tag attributes={props.attributes}>
+      <Neos.Fusion:Tag tagName="a" attributes={props.albumLinkAttributes}>
+        <Neos.Neos:ImageTag
+          asset={props.previewImage}
+          allowCropping={props.albumPreviewThumbnailCrop}
+          maximumWidth={props.albumPreviewThumbnailWidth}
+          width={props.albumPreviewThumbnailWidth}
+          maximumHeight={props.albumPreviewThumbnailHeight}
+          height={props.albumPreviewThumbnailHeight}
+          async='1'
+          attributes.class={props.albumImageAttributes.class}
+        />
+
+      </Neos.Fusion:Tag>
+      <Neos.Fusion:Tag attributes={props.albumTitleAttributes}>
+        <Neos.Fusion:Tag tagName="a" attributes={props.albumLinkAttributes}>{props.album.properties.title}</Neos.Fusion:Tag>
+      </Neos.Fusion:Tag>
+      <Neos.Fusion:Tag tagName="a" attributes={props.parentGalleryLinkAttributes} @if={props.renderGalleryLink}>{props.parentGallery.properties.title}</Neos.Fusion:Tag>
+    </Neos.Fusion:Tag>
+  `
+}

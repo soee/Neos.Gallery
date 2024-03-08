@@ -1,0 +1,55 @@
+'Soee.Gallery:Document.Album':
+  superTypes:
+    'Neos.Neos:Document': true
+    'Soee.Gallery:Mixins.AlbumProperties': true
+  childNodes:
+    'description':
+      type: 'Neos.Neos:ContentCollection'
+      position: 10
+    'main':
+      type: 'Neos.Neos:ContentCollection'
+      position: 20
+  ui:
+    label: 'i18n'
+    icon: 'icon-image'
+  properties:
+    previewImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'preview'
+          position: 10
+          editorOptions:
+            features:
+              crop: true
+            crop:
+              aspectRatio:
+                options:
+                  square:
+                    width: 1
+                    height: 1
+                    label: Square
+                  fourFive:
+                    width: 4
+                    height: 5
+                  fiveSeven:
+                    width: 5
+                    height: 7
+                  twoThree:
+                    width: 2
+                    height: 3
+                  fourThree:
+                    width: 4
+                    height: 3
+                  sixteenNine:
+                    width: 16
+                    height: 9
+                enableOriginal: true
+                allowCustom: true
+                locked:
+                  width: 0
+                  height: 0
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []

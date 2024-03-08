@@ -1,0 +1,36 @@
+##
+# Gallery component
+#
+prototype(Soee.Gallery:Content.Gallery) < prototype(Neos.Neos:ContentComponent) {
+  @context {
+    fromCurrentGallery = ${q(node).children('[instanceof Soee.Gallery:Document.Album]').get()}
+    fromCurrentGallery.@process.1 = ${q(node).property('selectFromCurrentGallery') ? value : []}
+    selectedFromGalleries = ${q(q(node).property('selectFromGalleries')).children('[instanceof Soee.Gallery:Document.Album]').get()}
+    manuallySelected = ${q(node).property('selection')}
+
+    sortBy = ${q(node).property('sortBy') || Configuration.setting('Soee.Gallery.gallery.sortBy')}
+    sortOrder = ${q(node).property('sortOrder') || Configuration.setting('Soee.Gallery.gallery.sortOrder')}
+    limit = ${q(node).property('limit') || Configuration.setting('Soee.Gallery.gallery.limit')}
+  }
+
+  albums = ${q(fromCurrentGallery).add(selectedFromGalleries).add(manuallySelected).sort(sortBy, sortOrder).unique().slice(0, limit).get()}
+  albumPreviewThumbnailWidth = ${q(node).property('albumPreviewThumbnailWidth') || Configuration.setting('Soee.Gallery.gallery.album.preview.thumbnail.width')}
+  albumPreviewThumbnailHeight = ${q(node).property('albumPreviewThumbnailHeight') || Configuration.setting('Soee.Gallery.gallery.album.preview.thumbnail.height')}
+  albumPreviewThumbnailCrop = ${q(node).property('albumPreviewThumbnailCrop') || Configuration.setting('Soee.Gallery.gallery.album.preview.thumbnail.crop')}
+  renderParentGalleryLink = ${q(node).property('renderParentGalleryLink') || Configuration.setting('Soee.Gallery.gallery.album.preview.renderParentGalleryLink')}
+
+  renderer = afx`<Soee.Gallery:Presentation.Gallery {...props} />`
+
+  @cache {
+    mode = 'cached'
+
+    entryIdentifier {
+      node = ${Neos.Caching.entryIdentifierForNode(node)}
+    }
+
+    entryTags {
+      1 = ${Neos.Caching.nodeTag(node)}
+      2 = ${Neos.Caching.nodeTypeTag('Soee.Gallery:Document.Album', node)}
+    }
+  }
+}

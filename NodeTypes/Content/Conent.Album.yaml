@@ -1,0 +1,8 @@
+'Soee.Gallery:Content.Album':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Soee.Gallery:Mixins.AlbumProperties': true
+  ui:
+    label: i18n
+    icon: image
+    position: 30

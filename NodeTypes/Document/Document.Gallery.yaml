@@ -1,0 +1,10 @@
+'Soee.Gallery:Document.Gallery':
+  superTypes:
+    'Neos.Neos:Document': true
+    'Soee.Gallery:Mixins.GalleryProperties': true
+  childNodes:
+    'main':
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: 'i18n'
+    icon: 'icon-images'

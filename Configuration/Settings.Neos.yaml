@@ -1,0 +1,11 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Soee.Gallery: true
+    userInterface:
+      translation:
+        autoInclude:
+          Soee.Gallery:
+            - 'NodeTypes/*'
+            - 'Main'

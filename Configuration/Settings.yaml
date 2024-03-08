@@ -1,0 +1,35 @@
+Soee:
+  Gallery:
+    album:
+      thumbnail:
+        width: 300
+        height: 200
+        crop: true
+      # assets limit to be shown in the album - if they are fetched by
+      # multiple tags and collections, the list might be very long
+      limit:
+      # sorting for assets in the album, default: lastModified ;
+      # other possible values: resource.filename, title etc.
+      sortBy:
+      # sorting direction for assets in the album, default: ASC ;
+      sortOrder:
+      # exclude assets based on their media type to prevent them from being included in the album
+      excludedMediaTypes:
+        - image/svg+xml
+      wrapperClass: 'gallery-album'
+      itemClass: 'gallery-album__item'
+      itemLinkClass: 'gallery-album__item-link'
+    gallery:
+      album:
+        preview:
+          thumbnail:
+            width: 500
+            height: 300
+            crop: true
+          renderParentGalleryLink: false
+      sortBy: 'title'
+      sortOrder: 'ASC'
+      # albums can be fetches either by their manual selection or by parent galleries
+      # and this can lead to a lot of albums to render, by limiting the amount of albums
+      # it is possible fetch only the most recent ones etc.
+      limit:

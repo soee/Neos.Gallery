@@ -1,0 +1,38 @@
+prototype(Soee.Gallery:Presentation.Fragment.AlbumItem) < prototype(Neos.Fusion:Component) {
+  asset = null
+  thumbnailWidth = 300
+  thumbnailHeight = 200
+
+  attributes = Neos.Fusion:DataStructure {
+    class {
+      base = ${Configuration.setting('Soee.Gallery.album.itemClass')}
+    }
+  }
+  linkAttributes = Neos.Fusion:DataStructure {
+    href = Neos.Neos:ImageUri {
+      asset = ${asset}
+      maximumWidth = 2000
+      maximumHeight = 2000
+    }
+    title = ${asset.properties.title}
+    class {
+      base = ${Configuration.setting('Soee.Gallery.album.itemLinkClass')}
+    }
+  }
+
+  renderer = afx`
+    <Neos.Fusion:Tag attributes={props.attributes}>
+      <Neos.Fusion:Tag tagName="a" attributes={props.linkAttributes}>
+        <Neos.Neos:ImageTag
+          asset={asset}
+          allowCropping="1"
+          maximumWidth={props.thumbnailWidth}
+          width={props.thumbnailWidth}
+          maximumHeight={props.thumbnailHeight}
+          height={props.thumbnailHeight}
+          async='1'
+        />
+      </Neos.Fusion:Tag>
+    </Neos.Fusion:Tag>
+  `
+}

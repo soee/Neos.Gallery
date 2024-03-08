@@ -1,0 +1,140 @@
+'Soee.Gallery:Mixins.GalleryProperties':
+  abstract: true
+  ui:
+    label: 'i18n'
+    icon: 'icon-images'
+    inspector:
+      tabs:
+        gallery:
+          label: 'i18n'
+          icon: 'icon-images'
+          position: 1
+      groups:
+        albumSource:
+          tab: 'gallery'
+          label: 'i18n'
+          icon: 'icon-hand-pointer'
+          position: 10
+        filters:
+          tab: 'gallery'
+          label: 'i18n'
+          icon: 'icon-filter'
+          position: 20
+        albumPreview:
+          tab: 'gallery'
+          label: 'i18n'
+          icon: 'icon-eye'
+          position: 30
+  properties:
+    selectFromCurrentGallery:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumSource'
+          position: 10
+    selectFromGalleries:
+      type: references
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumSource'
+          position: 20
+          editorOptions:
+            nodeTypes: ['Soee.Gallery:Document.Gallery']
+    selection:
+      type: references
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumSource'
+          position: 30
+          editorOptions:
+            nodeTypes: ['Soee.Gallery:Document.Album']
+    sortBy:
+      type: string
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'filters'
+          position: 10
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              title:
+                label: 'i18n'
+              _timestamps:
+                label: 'i18n'
+    sortOrder:
+      type: string
+      defaultValue: 'ASC'
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'filters'
+          position: 20
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              ASC:
+                label: 'i18n'
+              DESC:
+                label: 'i18n'
+    limit:
+      type: integer
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'filters'
+          position: 30
+          allowEmpty: true
+      validation:
+        'Neos.Neos/Validation/IntegerValidator':
+    albumPreviewThumbnailWidth:
+      type: integer
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumPreview'
+          position: 10
+          allowEmpty: true
+      validation:
+        'Neos.Neos/Validation/IntegerValidator':
+    albumPreviewThumbnailHeight:
+      type: integer
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumPreview'
+          position: 20
+          allowEmpty: true
+      validation:
+        'Neos.Neos/Validation/IntegerValidator':
+    albumPreviewThumbnailCrop:
+      type: boolean
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumPreview'
+          position: 30
+    renderParentGalleryLink:
+      type: boolean
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'albumPreview'
+          position: 40
+          allowEmpty: true

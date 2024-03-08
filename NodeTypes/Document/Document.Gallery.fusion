@@ -1,0 +1,17 @@
+prototype(Soee.Gallery:Document.Gallery) < prototype(Neos.Neos:Page) {
+  title = ${q(node).property('title')}
+
+  content {
+    main = Neos.Neos:ContentCollection {
+      nodePath = 'main'
+      @process.convertUris = Neos.Neos:ConvertUris
+    }
+  }
+  gallery = Soee.Gallery:Content.Gallery
+
+  body = afx`
+    {props.title}
+    {props.gallery}
+    {props.content.main}
+  `
+}

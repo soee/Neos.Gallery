@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Soee.Gallery" source-language="en" datatype="plaintext">
+    <body>
+
+      <trans-unit id="tabs.album" xml:space="preserve">
+        <source>Album settings</source>
+      </trans-unit>
+
+      <trans-unit id="groups.preview" xml:space="preserve">
+        <source>Preview</source>
+      </trans-unit>
+      <trans-unit id="groups.imageSource" xml:space="preserve">
+        <source>Image source selection</source>
+      </trans-unit>
+      <trans-unit id="groups.filters" xml:space="preserve">
+        <source>Filters</source>
+      </trans-unit>
+      <trans-unit id="groups.settings" xml:space="preserve">
+        <source>Settings</source>
+      </trans-unit>
+
+      <trans-unit id="properties.tags" xml:space="preserve">
+        <source>Tags</source>
+      </trans-unit>
+      <trans-unit id="properties.collections" xml:space="preserve">
+        <source>Collections</source>
+      </trans-unit>
+      <trans-unit id="properties.selection" xml:space="preserve">
+        <source>Manual selection</source>
+      </trans-unit>
+
+      <trans-unit id="properties.sortBy" xml:space="preserve">
+        <source>Sort By</source>
+      </trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values.filename" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values.lastModified" xml:space="preserve">
+				<source>Last Modified</source>
+			</trans-unit>
+      <trans-unit id="properties.sortOrder" xml:space="preserve">
+        <source>Sorting order</source>
+      </trans-unit>
+      <trans-unit id="properties.sortOrder.selectBoxEditor.values.ASC" xml:space="preserve">
+				<source>Ascending</source>
+			</trans-unit>
+      <trans-unit id="properties.sortOrder.selectBoxEditor.values.DESC" xml:space="preserve">
+				<source>Descending</source>
+			</trans-unit>
+      <trans-unit id="properties.limit" xml:space="preserve">
+        <source>Limit</source>
+      </trans-unit>
+
+      <trans-unit id="properties.thumbnailWidth" xml:space="preserve">
+        <source>Thumbnail width</source>
+      </trans-unit>
+      <trans-unit id="properties.thumbnailHeight" xml:space="preserve">
+        <source>Thumbnail height</source>
+      </trans-unit>
+      <trans-unit id="properties.crop" xml:space="preserve">
+        <source>Crop</source>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

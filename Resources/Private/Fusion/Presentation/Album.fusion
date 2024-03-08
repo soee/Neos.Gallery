@@ -1,0 +1,23 @@
+prototype(Soee.Gallery:Presentation.Album) < prototype(Neos.Fusion:Component) {
+  assets = null
+
+  thumbnailWidth = null
+  thumbnailHeight = null
+  crop = null
+  parentGallery = null
+
+  wrapperClass = ${Configuration.setting('Soee.Gallery.album.wrapperClass')}
+
+  renderer = afx`
+    <div class={props.wrapperClass}>
+      <Soee.Gallery:Presentation.Fragment.EmptyAlbum @if.assets={!props.assets} />
+      <Neos.Fusion:Loop items={props.assets} itemName="asset" @if.assets={props.assets}>
+        <Soee.Gallery:Presentation.Fragment.AlbumItem
+          asset={asset}
+          thumbnailWidth={props.thumbnailWidth}
+          thumbnailHeight={props.thumbnailHeight}
+        />
+      </Neos.Fusion:Loop>
+    </div>
+  `
+}

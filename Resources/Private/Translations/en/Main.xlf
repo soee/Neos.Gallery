@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Soee.Gallery" source-language="en" datatype="plaintext">
+    <body>
+
+      <trans-unit id="emptyAlbumMessage" xml:space="preserve">
+        <source>No filters selected or there are no assets matching the selected filters.</source>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

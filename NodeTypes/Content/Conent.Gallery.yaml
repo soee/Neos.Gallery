@@ -1,0 +1,14 @@
+'Soee.Gallery:Content.Gallery':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Soee.Gallery:Mixins.GalleryProperties': true
+  ui:
+    label: i18n
+    icon: images
+    position: 30
+  properties:
+    selectFromCurrentGallery:
+      ui:
+        inspector:
+          # we do not want to show this for content element
+          group: ''

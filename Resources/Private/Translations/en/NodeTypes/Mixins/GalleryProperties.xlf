@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Soee.Gallery" source-language="en" datatype="plaintext">
+    <body>
+
+      <trans-unit id="tabs.gallery" xml:space="preserve">
+        <source>Gallery settings</source>
+      </trans-unit>
+      <trans-unit id="groups.albumSource" xml:space="preserve">
+        <source>Album source selection</source>
+      </trans-unit>
+      <trans-unit id="groups.filters" xml:space="preserve">
+        <source>Filters</source>
+      </trans-unit>
+      <trans-unit id="groups.albumPreview" xml:space="preserve">
+        <source>Album preview</source>
+      </trans-unit>
+
+      <trans-unit id="properties.selectFromCurrentGallery" xml:space="preserve">
+        <source>Select from current gallery</source>
+      </trans-unit>
+      <trans-unit id="properties.selectFromGalleries" xml:space="preserve">
+        <source>Search in galleries</source>
+      </trans-unit>
+      <trans-unit id="properties.selection" xml:space="preserve">
+        <source>Selection</source>
+      </trans-unit>
+
+      <trans-unit id="properties.sortBy" xml:space="preserve">
+        <source>Sort By</source>
+      </trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values.filename" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+      <trans-unit id="properties.sortBy.selectBoxEditor.values._timestamps" xml:space="preserve">
+				<source>Timestamps</source>
+			</trans-unit>
+      <trans-unit id="properties.sortOrder" xml:space="preserve">
+        <source>Sorting order</source>
+      </trans-unit>
+      <trans-unit id="properties.sortOrder.selectBoxEditor.values.ASC" xml:space="preserve">
+				<source>Ascending</source>
+			</trans-unit>
+      <trans-unit id="properties.sortOrder.selectBoxEditor.values.DESC" xml:space="preserve">
+				<source>Descending</source>
+			</trans-unit>
+      <trans-unit id="properties.limit" xml:space="preserve">
+        <source>Limit</source>
+      </trans-unit>
+      <trans-unit id="properties.albumPreviewThumbnailWidth" xml:space="preserve">
+        <source>Thumbnail width</source>
+      </trans-unit>
+      <trans-unit id="properties.albumPreviewThumbnailHeight" xml:space="preserve">
+        <source>Thumbnail width</source>
+      </trans-unit>
+      <trans-unit id="properties.albumPreviewThumbnailCrop" xml:space="preserve">
+        <source>Crop</source>
+      </trans-unit>
+      <trans-unit id="properties.renderParentGalleryLink" xml:space="preserve">
+        <source>Render parent gallery link</source>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

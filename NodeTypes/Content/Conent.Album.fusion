@@ -1,0 +1,21 @@
+##
+# Album component
+#
+prototype(Soee.Gallery:Content.Album) < prototype(Neos.Neos:ContentComponent) {
+  @context {
+    tags = ${q(node).property('tags')}
+    selection = ${q(node).property('selection')}
+    collections = ${q(node).property('collections')}
+
+    sortBy = ${q(node).property('sortBy') != null || Configuration.setting('Soee.Gallery.album.sortBy')}
+    sortOrder = ${q(node).property('sortOrder') || Configuration.setting('Soee.Gallery.album.sortOrder')}
+    limit = ${q(node).property('limit') != null || Configuration.setting('Soee.Gallery.album.limit')}
+  }
+
+  assets = ${q(site).assets(selection, tags, collections, sortBy, sortOrder, limit).get()}
+  thumbnailWidth = ${q(node).property('thumbnailWidth') || Configuration.setting('Soee.Gallery.album.thumbnail.width')}
+  thumbnailHeight = ${q(node).property('thumbnailHeight') || Configuration.setting('Soee.Gallery.album.thumbnail.height')}
+  perentGallery = ${q(node).parents('[instanceof Soee.Gallery:Dcoument.Gallery]').get(0)}
+
+  renderer = afx`<Soee.Gallery:Presentation.Album {...props} />`
+}

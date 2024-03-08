@@ -1,0 +1,7 @@
+prototype(Soee.Gallery:Presentation.Fragment.EmptyAlbum) < prototype(Neos.Fusion:Component) {
+  message = ${I18n.translate('Soee.Gallery:Main:emptyAlbumMessage')}
+
+  renderer = afx`
+    <div class="soee-album__empty-album">{props.message}</div>
+  `
+}
