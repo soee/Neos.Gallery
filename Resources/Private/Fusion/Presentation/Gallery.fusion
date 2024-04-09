@@ -4,7 +4,6 @@ prototype(Soee.Gallery:Presentation.Gallery) < prototype(Neos.Fusion:Component) 
   albumPreviewThumbnailHeight = null
   albumPreviewThumbnailCrop = null
   renderParentGalleryLink = null
-
   attributes = Neos.Fusion:DataStructure {
     class {
       base = 'gallery'
@@ -12,18 +11,21 @@ prototype(Soee.Gallery:Presentation.Gallery) < prototype(Neos.Fusion:Component) 
   }
 
   renderer = afx`
-    <Neos.Fusion:Tag attributes={props.attributes}>
-      <Neos.Fusion:Loop items={props.albums} itemName="album" @if.albums={props.albums}>
-          <Soee.Gallery:Presentation.Fragment.GalleryAlbumPreview
-            album={album}
-            renderParentGalleryLink={props.renderParentGalleryLink}
-            albumPreviewThumbnailWidth={props.albumPreviewThumbnailWidth}
-            albumPreviewThumbnailHeight={props.albumPreviewThumbnailHeight}
-            albumPreviewThumbnailCrop={props.albumPreviewThumbnailCrop}
-            renderParentGalleryLink={props.renderParentGalleryLink}
-
-          />
-      </Neos.Fusion:Loop>
-    </Neos.Fusion:Tag>
+    <div>
+      <Soee.Neos.Pagination:Component.Paginator items={props.albums} renderAtTheTop={true} @if.albums={props.albums}>
+        <Neos.Fusion:Tag attributes={props.attributes}>
+          <Neos.Fusion:Loop items={paginatedData} itemName="album">
+            <Soee.Gallery:Presentation.Fragment.GalleryAlbumPreview
+              album={album}
+              renderParentGalleryLink={props.renderParentGalleryLink}
+              albumPreviewThumbnailWidth={props.albumPreviewThumbnailWidth}
+              albumPreviewThumbnailHeight={props.albumPreviewThumbnailHeight}
+              albumPreviewThumbnailCrop={props.albumPreviewThumbnailCrop}
+              renderParentGalleryLink={props.renderParentGalleryLink}
+            />
+          </Neos.Fusion:Loop>
+        </Neos.Fusion:Tag>
+      </Soee.Neos.Pagination:Component.Paginator>
+    </div>
   `
 }
